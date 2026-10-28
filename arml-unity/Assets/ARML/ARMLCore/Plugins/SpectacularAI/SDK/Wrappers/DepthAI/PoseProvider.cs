@@ -39,7 +39,9 @@ namespace SpectacularAI.DepthAI
 
         // Pose reset, pose = target->world * (pose_t0.inverse * pose_t1) = _origin * pose_t1
         private Matrix4x4 _origin = Matrix4x4.identity;
-        private Pose _currentPose = Pose.FromMatrix(0, Matrix4x4.identity);
+        // postavlja se tek iz VIO izlaza (ranije Pose.FromMatrix, što zove nativnu biblioteku već pri pravljenju komponente)
+        private Pose _currentPose;
+        private bool _hasPose;
 
         // Pose smoothing
         private TrackingStatus _prevTrackingStatus = TrackingStatus.INIT;
@@ -131,6 +133,7 @@ namespace SpectacularAI.DepthAI
             }
 
             _currentPose = output.Pose;
+            _hasPose = true;
 
             // Pose prediction
             Vector3 predictedPosition = Utility.PredictPosition(output.Pose.Position, output.Velocity, PosePredictDt);
@@ -158,7 +161,7 @@ namespace SpectacularAI.DepthAI
 
         private void ResetPositionAndYaw()
         {
-            if (UseVIO)
+            if (UseVIO && _hasPose)
             {
                 Matrix4x4 localToWorld = _currentPose.AsMatrix();
                 Matrix4x4 worldToLocalYaw = GetPositionAndYaw(localToWorld.inverse);

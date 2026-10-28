@@ -1,0 +1,23 @@
+﻿<Solution>
+  <Project Path="ARMLCore.csproj" />
+  <Project Path="FishNet.Codegen.Cecil.csproj" />
+  <Project Path="FishNet.Runtime.csproj" />
+  <Project Path="NaughtyAttributes.Editor.csproj" />
+  <Project Path="Unity.FishNet.Codegen.csproj" />
+  <Project Path="UltEvents.csproj" />
+  <Project Path="Edgegap.csproj" />
+  <Project Path="GameKit.Dependencies.csproj" />
+  <Project Path="babilinski.vosk.samples.csproj" />
+  <Project Path="ARMLCore.Editor.csproj" />
+  <Project Path="NaughtyAttributes.Test.csproj" />
+  <Project Path="ARMLCore.DS.Editor.csproj" />
+  <Project Path="FishNet.Demos.csproj" />
+  <Project Path="NaughtyAttributes.Core.csproj" />
+  <Project Path="babilinski.vosk.unity.csproj" />
+  <Project Path="ARMLCore.Utilities.Editor.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
+  <Project Path="TNRD.IconManager.Editor.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="Bunny83.simpleJson.csproj" />
+  <Project Path="ARMLCore.ScreenLogger.Editor.csproj" />
+</Solution>

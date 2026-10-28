@@ -174,7 +174,7 @@ namespace ARML.Interaction
         {
             if (Camera.main == null) return;
 
-            if (Input.GetMouseButton(0))
+            if (InteractionButton.Get())
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;

@@ -1,3 +1,4 @@
+using ARML.Interaction;
 using ARML.DS;
 using System;
 using System.Collections;
@@ -121,13 +122,13 @@ namespace ARML.Voice
         {
             if (!voiceCommandMode || cooldownActive) return;
 
-            if (Input.GetMouseButtonDown(0))
+            if (InteractionButton.GetDown())
             {
                 currentlyRecording = false;
                 buttonPressTimer = 0;
             }
 
-            if (Input.GetMouseButton(0))
+            if (InteractionButton.Get())
             {
                 if (currentlyRecording)
                     return;
@@ -142,7 +143,7 @@ namespace ARML.Voice
                 }
             }
 
-            if (Input.GetMouseButtonUp(0))
+            if (InteractionButton.GetUp())
             {
                 if (!currentlyRecording) return;
 

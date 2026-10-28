@@ -297,7 +297,7 @@ namespace ARML.Interaction
                 return;
 
             // Button Place
-            if (Input.GetMouseButtonDown(0))
+            if (InteractionButton.GetDown())
             {
                 iTimer.OnFinishInteraction();
             }

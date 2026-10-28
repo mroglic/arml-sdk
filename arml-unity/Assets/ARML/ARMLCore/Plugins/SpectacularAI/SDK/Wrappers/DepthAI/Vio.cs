@@ -113,6 +113,10 @@ namespace SpectacularAI.DepthAI
 
         public void StartSession()
         {
+#if UNITY_IOS || UNITY_EDITOR_OSX
+            // nema SpectacularAI biblioteke za iPhone i Mac (iPhone rig koristi ARKit, vidi RigIOS/RigLantern)
+            return;
+#endif
             if (_session != null)
             {
                 Debug.LogWarning("[VIO] StartSession called when session already started, skipping.");
@@ -180,7 +184,7 @@ namespace SpectacularAI.DepthAI
 
         public void OnDisable()
         {
-#if UNITY_EDITOR_WIN || UNITY_EDITOR_OSX
+#if UNITY_EDITOR_WIN || UNITY_EDITOR_OSX || UNITY_IOS
             return;
 #endif
             if (_session != null)
@@ -194,7 +198,7 @@ namespace SpectacularAI.DepthAI
 
         private void Update()
         {
-#if UNITY_EDITOR_WIN || UNITY_EDITOR_OSX
+#if UNITY_EDITOR_WIN || UNITY_EDITOR_OSX || UNITY_IOS
             return;
 #endif
 

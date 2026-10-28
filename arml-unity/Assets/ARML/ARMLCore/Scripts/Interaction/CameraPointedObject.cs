@@ -297,7 +297,7 @@ namespace ARML.Interaction
                     alreadyTriggered = true;
                     break;
                 case InteractionType.BUTTON:
-                    if (Input.GetMouseButtonDown(0))
+                    if (InteractionButton.GetDown())
                     {
                         alreadyTriggered = true;
                         CheckFail();

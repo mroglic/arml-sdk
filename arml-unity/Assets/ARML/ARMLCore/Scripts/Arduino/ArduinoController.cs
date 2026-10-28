@@ -1,3 +1,4 @@
+using ARML.Interaction;
 using NaughtyAttributes;
 using System;
 using System.Collections;
@@ -191,12 +192,12 @@ namespace ARML.Arduino
             // trigger lights on click
             if (solidColorOnButtonClick)
             {
-                if (!buttonDown && Input.GetMouseButtonDown(0))
+                if (!buttonDown && InteractionButton.GetDown())
                 {
                     buttonDown = true;
                     SetArduinoColor(solidColor);
                 }
-                if (buttonDown && Input.GetMouseButtonUp(0))
+                if (buttonDown && InteractionButton.GetUp())
                 {
                     buttonDown = false;
                     SetArduinoDefault();

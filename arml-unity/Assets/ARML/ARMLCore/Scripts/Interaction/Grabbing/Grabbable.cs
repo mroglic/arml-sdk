@@ -458,7 +458,7 @@ namespace ARML.Interaction
         /// </summary>
         private void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (InteractionButton.GetDown())
             {
                 if (!canDoAction) return;
 
@@ -486,7 +486,7 @@ namespace ARML.Interaction
                 }
             }
 
-            if (Input.GetMouseButtonUp(0))
+            if (InteractionButton.GetUp())
             {
                 if (!canDoAction) return;
 
